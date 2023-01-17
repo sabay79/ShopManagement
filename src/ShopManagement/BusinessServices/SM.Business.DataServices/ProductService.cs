@@ -15,5 +15,9 @@ namespace SM.Business.DataServices
 
             return products;
         }
+        public void Add(ProductModel model)
+        {
+            products.Add(model);
+        }
     }
 }

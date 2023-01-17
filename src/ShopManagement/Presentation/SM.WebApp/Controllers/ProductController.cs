@@ -28,10 +28,11 @@ namespace SM.WebApp.Controllers
         // POST: ProductController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(ProductModel model)
         {
             try
             {
+                _productService.Add(model);
                 return RedirectToAction(nameof(Index));
             }
             catch
