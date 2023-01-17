@@ -14,8 +14,19 @@ namespace SM.WebApp.Controllers
         }
 
         // GET: ProductController
-        public ActionResult Index()
+        public ActionResult Index(string? search)
         {
+            List<ProductModel> products = new List<ProductModel>();
+            if(search == null)
+            {
+                products = _productService.GetAll();
+
+            }
+            else
+            {
+                products = _productService.GetAll().Where(x=>x.Name.ToLower()
+                .Contains(search.Trim().ToLower())).ToList();
+            }
             return View(_productService.GetAll());
         }
 
