@@ -14,6 +14,7 @@ namespace SM.WebApp
 
             //All of the Custom Configuration
             builder.Services.AddSingleton<IProductService, ProductService>();
+            builder.Services.AddSingleton<IShopService, ShopService>();
 
             var app = builder.Build();
 
@@ -34,7 +35,7 @@ namespace SM.WebApp
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Product}/{action=Index}/{id?}");
+                pattern: "{controller=Shop}/{action=Index}/{id?}");
 
             app.Run();
         }

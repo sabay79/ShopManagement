@@ -2,10 +2,10 @@
 
 namespace SM.Business.DataServices.Interfaces
 {
-    public interface IProductService
+    public interface IShopService
     {
-        public List<ProductModel> GetAll();
-        public void Add(ProductModel model);
+        public List<ShopModel> GetAll();
+        public void Add(ShopModel model);
         public void Delete(int id);
     }
 }
