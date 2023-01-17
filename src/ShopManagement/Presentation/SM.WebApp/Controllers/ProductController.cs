@@ -27,7 +27,7 @@ namespace SM.WebApp.Controllers
                 products = _productService.GetAll().Where(x=>x.Name.ToLower()
                 .Contains(search.Trim().ToLower())).ToList();
             }
-            return View(_productService.GetAll());
+            return View(products);
         }
 
         // GET: ProductController/Create
