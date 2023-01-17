@@ -1,7 +1,7 @@
 ﻿using SM.Business.DataServices.Interfaces;
 using SM.Business.Models;
 
-namespace SM.Business.DataServices.Implementations
+namespace SM.Business.DataServices
 {
     public class ShopService : IShopService
     {

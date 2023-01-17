@@ -1,4 +1,4 @@
-using SM.Business.DataServices.Implementations;
+using SM.Business.DataServices;
 using SM.Business.DataServices.Interfaces;
 
 namespace SM.WebApp

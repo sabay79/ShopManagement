@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SM.Business.Interfaces\SM.Business.Interfaces.csproj" />
     <ProjectReference Include="..\SM.Business.Models\SM.Business.Models.csproj" />
   </ItemGroup>
 
