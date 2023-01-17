@@ -1,15 +1,22 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SM.Business.DataServices;
 using SM.Business.Models;
 
 namespace SM.WebApp.Controllers
 {
     public class ProductController : Controller
     {
+        private readonly ProductService _productService;
+        public ProductController(ProductService productService)
+        {
+            _productService = productService;
+        }
+
         // GET: ProductController
         public ActionResult Index()
         {
-            return View(products);
+            return View(_productService.GetAll());
         }
 
         // GET: ProductController/Details/5
