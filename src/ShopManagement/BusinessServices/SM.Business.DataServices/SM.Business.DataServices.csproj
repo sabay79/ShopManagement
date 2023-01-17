@@ -10,4 +10,8 @@
     <ProjectReference Include="..\SM.Business.Models\SM.Business.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Implementations\" />
+  </ItemGroup>
+
 </Project>
