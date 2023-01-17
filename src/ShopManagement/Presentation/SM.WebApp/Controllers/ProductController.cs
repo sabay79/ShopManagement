@@ -44,6 +44,7 @@ namespace SM.WebApp.Controllers
         // GET: ProductController/Edit/5
         public ActionResult Edit(int id)
         {
+            _productService.GetAll().Where(x => x.Id == id).FirstOrDefault();
             return View();
         }
 
