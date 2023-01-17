@@ -19,12 +19,6 @@ namespace SM.WebApp.Controllers
             return View(_productService.GetAll());
         }
 
-        // GET: ProductController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
         // GET: ProductController/Create
         public ActionResult Create()
         {
