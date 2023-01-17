@@ -19,5 +19,13 @@ namespace SM.Business.DataServices
         {
             products.Add(model);
         }
+        public void Delete(int id) 
+        {
+            var productToDelete = products.Where(x=>x.Id == id).FirstOrDefault();
+            if(productToDelete !=  null)
+            {
+                products.Remove(productToDelete);
+            }
+        }
     }
 }
