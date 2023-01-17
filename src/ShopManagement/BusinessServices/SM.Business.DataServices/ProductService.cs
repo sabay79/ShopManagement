@@ -1,8 +1,9 @@
-﻿using SM.Business.Models;
+﻿using SM.Business.DataServices.Interfaces;
+using SM.Business.Models;
 
 namespace SM.Business.DataServices
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
         private List<ProductModel> products = new List<ProductModel>();
         public List<ProductModel> GetAll() 

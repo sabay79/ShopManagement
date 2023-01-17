@@ -1,4 +1,5 @@
 using SM.Business.DataServices;
+using SM.Business.DataServices.Interfaces;
 
 namespace SM.WebApp
 {
@@ -12,7 +13,7 @@ namespace SM.WebApp
             builder.Services.AddControllersWithViews();
 
             //All of the Custom Configuration
-            builder.Services.AddSingleton<ProductService>();
+            builder.Services.AddSingleton<IProductService, ProductService>();
 
             var app = builder.Build();
 
