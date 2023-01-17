@@ -44,17 +44,22 @@ namespace SM.WebApp.Controllers
         // GET: ProductController/Edit/5
         public ActionResult Edit(int id)
         {
-            _productService.GetAll().Where(x => x.Id == id).FirstOrDefault();
-            return View();
+            var product = _productService.GetAll().Where(x => x.Id == id).FirstOrDefault();
+            return View(product);
         }
 
         // POST: ProductController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(ProductModel model)
         {
             try
             {
+                var product = _productService.GetAll().Where(x => x.Id == model.Id).FirstOrDefault();
+                if (product != null) 
+                {
+                    product.Name = model.Name;
+                }
                 return RedirectToAction(nameof(Index));
             }
             catch
