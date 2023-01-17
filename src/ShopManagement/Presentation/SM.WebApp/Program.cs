@@ -1,3 +1,5 @@
+using SM.Business.DataServices;
+
 namespace SM.WebApp
 {
     public class Program
@@ -8,6 +10,9 @@ namespace SM.WebApp
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //All of the Custom Configuration
+            builder.Services.AddSingleton<ProductService>();
 
             var app = builder.Build();
 
