@@ -4,7 +4,14 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Products</h1>
+
+<div>
+    <form asp-action="Index">
+        <input type="text" name="search" class="form-control" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+    </form>
+</div>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -32,7 +39,7 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             </td>
         </tr>
 }
