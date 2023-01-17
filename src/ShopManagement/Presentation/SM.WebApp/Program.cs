@@ -16,7 +16,7 @@ namespace SM.WebApp
 
             // Configure Entity Framework
             builder.Services.AddDbContext<ShopManagementDbContext>(
-                options => options.UseSqlServer("Data Source=localhost; Database=ShopDB; Integrated Security=SSPI"));
+                options => options.UseSqlServer("Data Source=localhost; Database=ShopDB; Integrated Security=SSPI; TrustServerCertificate=True;"));
 
             // All of the Custom Configuration
             builder.Services.AddSingleton<IProductService, ProductService>();
