@@ -15,7 +15,7 @@ namespace SM.WebApp.Controllers
         // GET: ProductController
         public ActionResult Index(string? search)
         {
-            List<ProductModel> products = new List<ProductModel>();
+            List<ProductModel> products;
             if (search == null)
             {
                 products = _productService.GetAll();
@@ -23,8 +23,7 @@ namespace SM.WebApp.Controllers
             }
             else
             {
-                products = _productService.GetAll().Where(x => x.Name.ToLower()
-                .Contains(search.Trim().ToLower())).ToList();
+                products = _productService.Search(search);
             }
             return View(products);
         }

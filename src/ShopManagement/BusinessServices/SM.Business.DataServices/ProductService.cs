@@ -17,6 +17,15 @@ namespace SM.Business.DataServices
             var productModels = allProducts.Select(x => new ProductModel { Id = x.Id, Name = x.Name, Qty=x.Qty }).ToList(); 
             return productModels;
         }
+        public List<ProductModel> Search(string searchTerm) 
+        {
+            searchTerm = searchTerm.Trim().ToLower();
+            var allProducts = _dbContext.Products.Where(x => x.Name.ToLower()
+                .Contains(searchTerm)).ToList();
+
+            var productModels = allProducts.Select(x => new ProductModel { Id = x.Id, Name = x.Name, Qty = x.Qty }).ToList();
+            return productModels;
+        }
         public void Add(ProductModel model)
         {
             _dbContext.Products.Add(new Data.Models.Product { Id = model.Id, Name=model.Name, Qty=model.Qty});
