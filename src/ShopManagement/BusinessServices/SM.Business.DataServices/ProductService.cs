@@ -22,6 +22,15 @@ namespace SM.Business.DataServices
             _dbContext.Products.Add(new Data.Models.Product { Id = model.Id, Name=model.Name});
             _dbContext.SaveChanges();
         }
+        public void Update(ProductModel model) 
+        {
+            var entity = _dbContext.Products.FirstOrDefault(x => x.Id == model.Id);
+            if (entity != null) 
+            {
+                entity.Name = model.Name;
+                _dbContext.SaveChanges();
+            }
+        }
         public void Delete(int id)
         {
             var productToDelete = _dbContext.Products.Where(x => x.Id == id).FirstOrDefault();

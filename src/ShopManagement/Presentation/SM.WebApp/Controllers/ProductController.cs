@@ -65,11 +65,7 @@ namespace SM.WebApp.Controllers
         {
             try
             {
-                var product = _productService.GetAll().Where(x => x.Id == model.Id).FirstOrDefault();
-                if (product != null)
-                {
-                    product.Name = model.Name;
-                }
+                _productService.Update(model);
                 return RedirectToAction(nameof(Index));
             }
             catch
