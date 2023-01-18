@@ -14,12 +14,12 @@ namespace SM.Business.DataServices
         public List<ProductModel> GetAll()
         {
             var allProducts = _dbContext.Products.ToList();
-            var productModels = allProducts.Select(x => new ProductModel { Id = x.Id, Name = x.Name }).ToList(); 
+            var productModels = allProducts.Select(x => new ProductModel { Id = x.Id, Name = x.Name, Qty=x.Qty }).ToList(); 
             return productModels;
         }
         public void Add(ProductModel model)
         {
-            _dbContext.Products.Add(new Data.Models.Product { Id = model.Id, Name=model.Name});
+            _dbContext.Products.Add(new Data.Models.Product { Id = model.Id, Name=model.Name, Qty=model.Qty});
             _dbContext.SaveChanges();
         }
         public void Update(ProductModel model) 
@@ -28,6 +28,7 @@ namespace SM.Business.DataServices
             if (entity != null) 
             {
                 entity.Name = model.Name;
+                entity.Qty = model.Qty;
                 _dbContext.SaveChanges();
             }
         }
